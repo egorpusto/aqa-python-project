@@ -1,9 +1,12 @@
 import pytest
+from dotenv import load_dotenv
+import os
 from utils.api_client import ApiClient
 
+load_dotenv()
 
 @pytest.fixture
 def api_client():
-    base_url = "https://reqres.in"
-    api_key = "pub_b6497b14c1a18fb6931d6cbe0c949445"
+    base_url = os.getenv("BASE_URL")
+    api_key = os.getenv("API_KEY")
     yield ApiClient(base_url, api_key)
