@@ -4,9 +4,11 @@ from playwright.sync_api import Page, expect
 from pages.checkbox_page import CheckboxPage
 
 @pytest.mark.smoke
+@allure.epic("Web UI")    
 @allure.title("Checkboxes")
 @allure.description("Выбор чекбокса домашней страницы")
-@allure.feature("Select")
+@allure.feature("Checkboxes")
+@allure.story("Select checkbox")
 @allure.severity(allure.severity_level.NORMAL)
 def test_select_home(page: Page) -> None:
     select_page = CheckboxPage(page)

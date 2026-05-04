@@ -4,9 +4,11 @@ from utils.api_client import ApiClient
 
 
 @pytest.mark.smoke
+@allure.epic("API")   
 @allure.title('Авторизация с корректными учетными данными')
 @allure.description("Проверяем что POST возвращает 200 и token")
-@allure.feature("Login")
+@allure.feature("Auth")
+@allure.story("Successful login")
 @allure.severity(allure.severity_level.CRITICAL)
 def test_login_success(api_client: ApiClient) -> None:
     with allure.step("Отправляем POST запрос"):
@@ -26,9 +28,11 @@ def test_login_success(api_client: ApiClient) -> None:
 
 
 @pytest.mark.smoke
+@allure.epic("API")
 @allure.title("Авторизация с недействительными учетными данными")
 @allure.description("Проверяем что POST возвращает 400 и error")
-@allure.feature("Login")
+@allure.feature("Auth")
+@allure.story("Wrong password login")
 @allure.severity(allure.severity_level.CRITICAL)
 def test_login_wrong_password(api_client: ApiClient) -> None:
     with allure.step("Отправляем POST запрос"):
@@ -48,9 +52,11 @@ def test_login_wrong_password(api_client: ApiClient) -> None:
 
 
 @pytest.mark.smoke
+@allure.epic("API")
 @allure.title("Регистрация с неведённым паролем")
 @allure.description("Проверяем что POST возвращает 400")
-@allure.feature("Registration")
+@allure.feature("Register")
+@allure.story("Missing password register")
 @allure.severity(allure.severity_level.NORMAL)
 def test_register_missing_password(api_client: ApiClient) -> None:
     with allure.step("Отправляем POST запрос"):
@@ -66,9 +72,11 @@ def test_register_missing_password(api_client: ApiClient) -> None:
 
 
 @pytest.mark.smoke
+@allure.epic("API")
 @allure.title("Успешная регистрация")
 @allure.description("Проверяем что POST возвращает 200")
-@allure.feature("Registration")
+@allure.feature("Register")
+@allure.story("Successful register")
 @allure.severity(allure.severity_level.NORMAL)
 def test_register_success(api_client: ApiClient) -> None:
     with allure.step("Отправляем POST запрос"):

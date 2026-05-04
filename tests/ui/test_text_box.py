@@ -4,9 +4,11 @@ from playwright.sync_api import Page, expect
 from pages.text_box_page import TextBoxPage
 
 @pytest.mark.smoke
+@allure.epic("Web UI")   
 @allure.title("Заполнение формы данными пользователя")
 @allure.description("Проверяем что данные вводятся и выводятся на странице")
-@allure.feature("Filling")
+@allure.feature("Text box")
+@allure.story("Fill form")
 @allure.severity(allure.severity_level.NORMAL)
 def test_fill_form(page: Page) -> None:
     text_page = TextBoxPage(page)
