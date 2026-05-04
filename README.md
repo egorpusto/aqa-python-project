@@ -30,10 +30,12 @@ aqa_project/
 ├── pages/                  # Page Object classes
 │   ├── base_page.py        # Base class for all pages
 │   ├── text_box_page.py    # demoqa.com/text-box
+│   ├── buttons_page.py     # demoqa.com/buttons
 │   └── checkbox_page.py    # demoqa.com/checkbox
 ├── tests/
 │   ├── ui/                 # UI tests (Playwright)
 │   │   ├── test_text_box.py
+    │   ├── test_buttons.py
 │   │   └── test_checkbox.py
 │   └── api/                # API tests (Requests)
 │       ├── test_users.py
@@ -65,6 +67,9 @@ aqa_project/
 |------|------|--------|
 | Fill text box form | /text-box | smoke |
 | Select home checkbox | /checkbox | smoke |
+| Double click | /buttons | smoke |
+| Right click | /buttons | smoke |
+| Click | /buttons | smoke |
 
 ---
 
